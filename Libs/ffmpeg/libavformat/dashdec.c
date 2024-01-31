@@ -768,7 +768,7 @@ static int resolve_content_path(AVFormatContext *s, const char *url, int *max_ur
     baseurl = xmlNodeGetContent(node);
     root_url = (av_strcasecmp(baseurl, "")) ? baseurl : path;
     if (node) {
-        xmlNodeSetContent(node, root_url);
+        xmlNodeSetContent(node, xmlEncodeEntitiesReentrant(NULL, root_url));
         updated = 1;
     }
 
