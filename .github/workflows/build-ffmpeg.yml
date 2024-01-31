@@ -1,0 +1,27 @@
+name: Build FFmpeg
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        submodules: 'recursive'
+
+    - name: Install Tools
+      run: PowerShell -NoProfile -ExecutionPolicy Bypass -Command ".\Build\InstallTools.ps1"
+
+    - name: Build FFmpeg
+      run: PowerShell -NoProfile -ExecutionPolicy Bypass -Command ".\Build-FFmpeg.ps1"
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: nuget-artifacts
+        path: Output/NuGet
