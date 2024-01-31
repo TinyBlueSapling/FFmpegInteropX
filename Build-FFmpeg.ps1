@@ -44,12 +44,12 @@ param(
     [switch] $ClearBuildFolders,
 
     # If a version string is specified, a NuGet package will be created.
-    [string] $NugetPackageVersion = $null,
+    [string] $NugetPackageVersion = '7.1.100',
 
     # FFmpeg NuGet settings
     [string] $FFmpegUrl = 'https://git.ffmpeg.org/ffmpeg.git',
 
-    [string] $FFmpegCommit = $(git --git-dir $PSScriptRoot/Libs/ffmpeg/.git rev-parse HEAD),
+    [string] $FFmpegCommit = 'e5c570073293b1d31bac36c2ba34587d284aa033',
 
     [switch] $AllowParallelBuilds,
 
