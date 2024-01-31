@@ -16,9 +16,6 @@
 [submodule "Libs/PkgConfigFake"]
 	path = Libs/PkgConfigFake
 	url = https://github.com/ffmpeginteropx/PkgConfigFake.git
-[submodule "Libs/ffmpeg"]
-	path = Libs/ffmpeg
-	url = https://git.ffmpeg.org/ffmpeg.git
 [submodule "Libs/x265"]
 	path = Libs/x265
 	url = https://github.com/videolan/x265.git
