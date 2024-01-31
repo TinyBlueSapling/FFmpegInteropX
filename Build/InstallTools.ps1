@@ -35,8 +35,11 @@ if ($Tools.Contains("MSYS2"))
 		Write-Host
         Write-Host "Updating MSYS2 packages..."
         Write-Host
-		
-		C:\msys64\usr\bin\bash.exe --login -c "pacman --noconfirm -Syu"
+
+        # Install MSYS2 dependencies
+        C:\msys64\usr\bin\bash.exe --login -c "pacman --noconfirm -Syu"
+        C:\msys64\usr\bin\bash.exe --login -c "pacman --noconfirm -Su"
+        C:\msys64\usr\bin\bash.exe --login -c "pacman --noconfirm -S make perl diffutils yasm nasm mingw-w64-x86_64-meson mingw-w64-x86_64-ninja"
 		C:\msys64\usr\bin\bash.exe --login -c "pacman --noconfirm -Scc"
 	}
 }
