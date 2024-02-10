@@ -32,7 +32,7 @@ param(
     
     # shared: create shared dll - static: create lib for static linking
     [ValidateSet('shared', 'static')]
-    [string] $SharedOrStatic = 'shared',
+    [string] $SharedOrStatic = 'static',
 
     [System.IO.DirectoryInfo] $VSInstallerFolder = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer",
 
@@ -44,7 +44,7 @@ param(
     [switch] $ClearBuildFolders,
 
     # If a version string is specified, a NuGet package will be created.
-    [string] $NugetPackageVersion = '7.1.100',
+    [string] $NugetPackageVersion = '8.1.100',
 
     # FFmpeg NuGet settings
     [string] $FFmpegUrl = 'https://git.ffmpeg.org/ffmpeg.git',

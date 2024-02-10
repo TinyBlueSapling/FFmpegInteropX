@@ -35,7 +35,7 @@ param(
     [switch] $ClearBuildFolders,
 
     # If a version string is specified, a NuGet package will be created.
-    [string] $NugetPackageVersion = $null,
+    [string] $NugetPackageVersion = '2.0.0',
 
     # FFmpegInteropX NuGet settings
     [string] $FFmpegInteropXUrl = 'https://github.com/ffmpeginteropx/FFmpegInteropX.git',

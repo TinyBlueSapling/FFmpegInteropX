@@ -21,6 +21,9 @@ jobs:
     - name: Build FFmpeg
       run: PowerShell -NoProfile -ExecutionPolicy Bypass -Command ".\Build-FFmpeg.ps1"
 
+    - name: Build FFmpegInteropX
+      run: PowerShell -NoProfile -ExecutionPolicy Bypass -Command ".\Build-FFmpegInteropX.ps1"
+
     - uses: actions/upload-artifact@v4
       with:
         name: nuget-artifacts
