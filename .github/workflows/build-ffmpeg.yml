@@ -22,7 +22,7 @@ jobs:
       run: PowerShell -NoProfile -ExecutionPolicy Bypass -Command ".\Build-FFmpeg.ps1"
 
     - name: Upload FFmpeg
-    - uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v4
       with:
         name: ffmpeg-artifacts
         path: Output/FFmpegUWP
