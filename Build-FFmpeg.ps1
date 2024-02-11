@@ -51,7 +51,7 @@ param(
 
     [string] $FFmpegCommit = 'e5c570073293b1d31bac36c2ba34587d284aa033',
 
-    [switch] $AllowParallelBuilds,
+    [switch] $AllowParallelBuilds = $true,
 
     [switch] $SkipBuildPkgConfigFake,
     
@@ -178,6 +178,8 @@ function Build-Platform {
             Copy-Item $build\$project\licenses\* $build\licenses\ -Recurse -Force
             Copy-Item $build\$project\lib\$Platform\$targetName.lib $build\lib\ -Force
             Copy-Item $build\$project\lib\$Platform\$targetName.pdb $build\lib\ -Force
+            Copy-Item $build\$project\lib\$Platform\$targetName.lib $target\lib\ -Force
+            Copy-Item $build\$project\lib\$Platform\$targetName.pdb $target\lib\ -Force
         }
 
         # Rename all libraries to ffmpeg target names
@@ -233,6 +235,8 @@ function Build-Platform {
             Copy-Item -Force $SolutionDir\Libs\openssl\license.txt $build\licenses\openssl.txt
             Copy-Item -Force $ssldir\libssl_static.lib $build\lib\ssl.lib
             Copy-Item -Force $ssldir\libcrypto_static.lib $build\lib\crypto.lib
+            Copy-Item -Force $ssldir\libssl_static.lib $target\lib\ssl.lib
+            Copy-Item -Force $ssldir\libcrypto_static.lib $target\lib\crypto.lib
             } else {
             Write-Host
             Write-Host "Openssl already exists in target build configuration. Skipping build."

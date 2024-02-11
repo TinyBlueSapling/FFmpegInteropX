@@ -7,6 +7,7 @@ platform=$2
 
 intDir="$DIR/Intermediate/FFmpeg$variant/$platform/int/dav1d"
 outDir="$DIR/Intermediate/FFmpeg$variant/$platform"
+libDir="$DIR/Output/FFmpeg$variant/$platform"
 
 # make sure path to link.exe (same dir as cl.exe) is at start of path variable
 # this avoids conflicts with GNU link.exe
@@ -33,7 +34,10 @@ mkdir -p $outDir/include
 mkdir -p $outDir/include/dav1d
 mkdir -p $outDir/licenses
 
+mkdir -p $libDir/lib
+
 cp $intDir/src/libdav1d.a $outDir/lib/libdav1d.lib || exit
+cp $intDir/src/libdav1d.a $libDir/lib/libdav1d.lib || exit
 cp $DIR/Libs/dav1d/include/dav1d/*.h $outDir/include/dav1d || exit
 cp -r $intDir/include/dav1d $outDir/include || exit
 cp $DIR/Libs/dav1d/COPYING $outDir/licenses/dav1d.txt
