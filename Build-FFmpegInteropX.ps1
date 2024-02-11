@@ -78,7 +78,7 @@ function Build-Platform {
         Remove-Item -Force -Recurse -ErrorAction Ignore $SolutionDir\Output\FFmpegInteropX\$Platform\*
     }
 		
-	if ($targetArch -eq "x86")
+	<# if ($targetArch -eq "x86")
 	{
 	    MSBuild.exe $SolutionDir\Source\FFmpegInteropX.DotNet.csproj `
 			/restore `
@@ -89,7 +89,7 @@ function Build-Platform {
 			/p:useenv=true
 			
 		if ($lastexitcode -ne 0) { throw "Failed to build library FFmpegInteropX.DotNet.csproj." }
-	}
+	} #>
 
     MSBuild.exe $SolutionDir\Source\FFmpegInteropX.vcxproj `
         /restore `

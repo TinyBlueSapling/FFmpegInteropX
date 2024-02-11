@@ -334,6 +334,7 @@ function Build-Platform {
 
     # Copy PDBs to built binaries dir
     Get-ChildItem -Recurse -Include '*.pdb' $build\int\ffmpeg\ | Copy-Item -Destination $target\bin\ -Force
+    Get-ChildItem -Recurse -Include '*.pdb' $build\int\ffmpeg\ | Copy-Item -Destination $target\lib\ -Force
 
     # Copy license files
     Copy-Item $SolutionDir\Libs\FFmpeg\COPYING.LGPLv2.1 $target\licenses\ffmpeg.txt -Force
