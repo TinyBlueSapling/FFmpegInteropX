@@ -51,7 +51,7 @@ param(
 
     [string] $FFmpegCommit = 'e5c570073293b1d31bac36c2ba34587d284aa033',
 
-    [switch] $AllowParallelBuilds = $true,
+    [switch] $AllowParallelBuilds,
 
     [switch] $SkipBuildPkgConfigFake,
     

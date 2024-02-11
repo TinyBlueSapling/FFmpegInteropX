@@ -19,7 +19,7 @@ jobs:
       run: PowerShell -NoProfile -ExecutionPolicy Bypass -Command ".\Build\InstallTools.ps1"
 
     - name: Build FFmpeg
-      run: PowerShell -NoProfile -ExecutionPolicy Bypass -Command ".\Build-FFmpeg.ps1"
+      run: PowerShell -NoProfile -ExecutionPolicy Bypass -Command ".\Build-FFmpeg.ps1 -AllowParallelBuilds"
 
     - name: Upload FFmpeg
       uses: actions/upload-artifact@v4
